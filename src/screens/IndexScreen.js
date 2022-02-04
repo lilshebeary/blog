@@ -6,6 +6,7 @@ import {
   FlatList,
   Button,
   TouchableOpacity,
+  SafeAreaView,
 } from "react-native";
 import { Context } from "../context/BlogContext";
 import { Feather } from "@expo/vector-icons";
@@ -14,7 +15,8 @@ const IndexScreen = ({ navigation }) => {
   const { state, deleteBlogPost } = useContext(Context);
 
   return (
-    <View>
+    <SafeAreaView style={styles.safeArea}>
+    <View style={styles.container}>
       <FlatList
         data={state}
         keyExtractor={(blogPost) => blogPost.title}
@@ -36,6 +38,7 @@ const IndexScreen = ({ navigation }) => {
         }}
       />
     </View>
+    </SafeAreaView>
   );
 };
 
@@ -50,6 +53,12 @@ IndexScreen.navigationOptions = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: "#fee440",
+    alignItems: "center",
+  },
+ 
   row: {
     flexDirection: "row",
     justifyContent: "space-between",

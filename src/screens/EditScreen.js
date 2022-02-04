@@ -16,12 +16,14 @@ const EditScreen = ({ navigation }) => {
         <View style={styles.container}>
             <Text style={styles.label}>Edit Title:</Text>
             <TextInput 
+                autoCorrect='false'
                 value={title}
                 onChangeText={newTitle => setTitle(newTitle)}
                 style={styles.input}
             />
             <Text style={styles.label}>Edit Content:</Text>
             <TextInput
+                autoCorrect='false'
                 value={content}
                 onChangeText={newContent => setContent(newContent)}
                 style={styles.input}
