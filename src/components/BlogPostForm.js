@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput, Button } from 'react-native'
 
-const BlogPostForm = () => {
+const BlogPostForm = ({ onSubmit }) => {
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
+
     return (
         <View style={styles.container}>
             <Text style={styles.label}>Enter Title:</Text>
@@ -17,13 +20,8 @@ const BlogPostForm = () => {
                 style={styles.input}
             />
             <Button 
-                title="Add Blog Post" 
-                onPress={() => {
-                    addBlogPost(title, content, () => {
-                        navigation.navigate('Index');
-                    });
-                   
-                }}
+                title='Save Blog Post' 
+                onPress={() => onSubmit(title, content)}
             />
         </View>
     )

@@ -15,7 +15,7 @@ const IndexScreen = ({ navigation }) => {
   const { state, deleteBlogPost } = useContext(Context);
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    
     <View style={styles.container}>
       <FlatList
         data={state}
@@ -38,7 +38,7 @@ const IndexScreen = ({ navigation }) => {
         }}
       />
     </View>
-    </SafeAreaView>
+   
   );
 };
 
@@ -53,11 +53,7 @@ IndexScreen.navigationOptions = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: "#fee440",
-    alignItems: "center",
-  },
+ 
  
   row: {
     flexDirection: "row",
